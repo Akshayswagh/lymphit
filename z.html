@@ -1,0 +1,88 @@
+<!-- Add this CSS -->
+<style>
+  .resources-content-wrapper {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  .main-resources-content {
+    flex: 1;
+  }
+
+  .featured-links-container {
+    width: 280px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 25px;
+    height: fit-content;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 120px;
+  }
+
+  .featured-links-title {
+    color: #00796b;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    text-align: center;
+  }
+
+  @media (max-width: 1200px) {
+    .resources-content-wrapper {
+      flex-direction: column;
+    }
+    
+    .featured-links-container {
+      width: 100%;
+      position: static;
+      order: -1;
+      margin-bottom: 30px;
+    }
+  }
+</style>
+
+<!-- Modified HTML structure -->
+<main class="resources-container">
+  <div class="resources-header">
+    <h1 class="resources-title">Lymphedema Resources</h1>
+    <p class="resources-intro">
+      Explore these trusted organizations and educational resources to learn
+      more about lymphedema management, treatment options, and support
+      networks.
+    </p>
+  </div>
+
+  <div class="resources-content-wrapper">
+    <div class="main-resources-content">
+      <!-- All resource cards go here -->
+      <div class="resource-card">...</div>
+      <div class="resource-card">...</div>
+      <!-- ... other resource cards ... -->
+    </div>
+
+    <!-- Featured Organizations Sidebar -->
+    <div class="featured-links-container">
+      <h3 class="featured-links-title">Featured Organizations</h3>
+      <a href="https://lymphaticnetwork.org/" class="featured-link" target="_blank">
+        <i class="bi bi-link-45deg"></i> Lymphatic Network
+      </a>
+      <a href="https://rarediseases.org/organizations/lymphatic-education-research-network" 
+         class="featured-link" target="_blank">
+        <i class="bi bi-link-45deg"></i> Rare Diseases Org
+      </a>
+      <a href="http://www.lymphnotes.com/org.php/id/1384/" 
+         class="featured-link" target="_blank">
+        <i class="bi bi-link-45deg"></i> LymphNotes
+      </a>
+      <a href="https://lymphnet.org/" class="featured-link" target="_blank">
+        <i class="bi bi-link-45deg"></i> LymphNet
+      </a>
+      <a href="https://lymphaticnetwork.org/" class="featured-link" target="_blank">
+        <i class="bi bi-link-45deg"></i> LERN
+      </a>
+    </div>
+  </div>
+</main>

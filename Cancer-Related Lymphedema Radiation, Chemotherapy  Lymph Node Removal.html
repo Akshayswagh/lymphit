@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/1.png" rel="icon" />
+    <link href="assets/img//about.jpg" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <title>Cancer-Related Lymphedema - Specialized Post-Cancer Support</title>
+    <style>
+      .clymph-hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        font-family: "Segoe UI", sans-serif;
+        color: #2a2a2a;
+        line-height: 1.6;
+      }
+
+      .clymph-main-heading {
+        color: #00796b;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .clymph-subheading {
+        color: #00796b;
+        font-size: 1.5rem;
+        margin: 30px 0 15px;
+        border-bottom: 2px solid #eeffe9;
+        padding-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .clymph-intro-text {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        font-style: italic;
+      }
+
+      .clymph-service-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-left: 4px solid #00796b;
+      }
+
+      .clymph-service-title {
+        color: #00796b;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
+
+      .clymph-bullet-list {
+        padding-left: 20px;
+        margin: 15px 0;
+      }
+
+      .clymph-bullet-list li {
+        margin-bottom: 8px;
+        position: relative;
+        padding-left: 25px;
+      }
+
+      .clymph-bullet-list li:before {
+        color: #00796b;
+        font-weight: bold;
+        position: absolute;
+        left: 10px;
+      }
+
+      .clymph-divider {
+        border: 0;
+        height: 1px;
+        background-color: #eeffe9;
+        margin: 40px 0;
+      }
+
+      .clymph-closing-section {
+        background-color: #f0f4f8;
+        padding: 30px;
+        border-radius: 12px;
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .clymph-cta-text {
+        font-style: italic;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 1.1rem;
+      }
+
+      .clymph-section {
+        padding: 60px 20px;
+        background-color: #f0f4f8;
+        text-align: center;
+        margin-top: 40px;
+        border-radius: 12px;
+      }
+
+      .clymph-container {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .clymph-highlight {
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      .clymph-input-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .clymph-email-input {
+        width: 70%;
+        max-width: 400px;
+        padding: 14px;
+        border: 1px solid #bbb;
+        border-radius: 8px;
+        font-size: 1rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .clymph-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .clymph-primary-btn {
+        background-color: #00796b;
+        color: white;
+        border: none;
+      }
+
+      .clymph-primary-btn:hover {
+        background-color: #005f56;
+      }
+
+      .clymph-privacy-note {
+        font-size: 1rem;
+        color: #555;
+        margin-top: 16px;
+      }
+
+      .clymph-symptom-item {
+        background-color: #eeffe9;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .clymph-compassion-box {
+        background-color: #f8f9fa;
+        border-left: 4px solid #00796b;
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 0 8px 8px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-container">
+        <a href="index.html" class="site-logo">
+          <img src="assets/img/1.png" alt="Lymphfit Centre Logo" />
+        </a>
+
+        <nav class="primary-nav" id="primaryNavigation">
+          <ul class="responsive">
+            <li><a href="index.html" class="current-page">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <!-- <li><a href="#departments">Departments</a></li> -->
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+          <a class="nav-button" href="#appointment">Book Appointment</a>
+        </nav>
+
+        <div class="menu-toggle" id="mobileMenuToggle">
+          <i class="bi bi-list"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="main">
+      <div class="clymph-hero-container">
+        <h1 class="clymph-main-heading">Cancer-Related Lymphedema</h1>
+        <p class="clymph-intro-text">
+          Support for the Swelling You Didn't Expect
+        </p>
+
+        <p>
+          If you're a cancer survivor experiencing swelling after treatment, you
+          are not alone. Many people develop secondary lymphedema following
+          cancer-related therapies like radiation, chemotherapy, or lymph node
+          removal. This swelling can be frustrating, uncomfortable, and
+          sometimes even painful—but it's also manageable with the right care.
+        </p>
+
+        <p>
+          At our clinic, we specialize in helping individuals navigate
+          post-cancer swelling with compassion, expertise, and personalized
+          treatment.
+        </p>
+
+        <hr class="clymph-divider" />
+
+        <h2 class="clymph-subheading">
+          Why Does Swelling Happen After Cancer Treatment?
+        </h2>
+        <p>
+          Cancer treatments—especially surgeries that involve lymph node removal
+          or radiation therapy—can damage or interrupt the lymphatic system.
+          When lymph fluid is no longer able to flow freely, it builds up in the
+          tissues, leading to swelling known as secondary lymphedema.
+        </p>
+
+        <p>
+          This condition can develop weeks, months, or even years after
+          treatment, and commonly affects the arms, legs, chest, abdomen, or
+          groin depending on the cancer site.
+        </p>
+
+        <hr class="clymph-divider" />
+
+        <h2 class="clymph-subheading">
+          You May Have Secondary Lymphedema If You Notice:
+        </h2>
+
+        <ul class="clymph-bullet-list">
+          <li>
+            Swelling that comes and goes or becomes persistent in an arm, leg,
+            or other part of the body
+          </li>
+          <li>
+            A feeling of heaviness, tightness, or decreased flexibility in the
+            affected area
+          </li>
+          <li>Skin that feels firmer, thicker, or more sensitive than usual</li>
+          <li>Jewelry or clothing feeling tighter than before</li>
+          <li>Skin infections or inflammation (cellulitis)</li>
+        </ul>
+
+        <hr class="clymph-divider" />
+
+        <h2 class="clymph-subheading">
+          Our Specialized Cancer Recovery Support Includes:
+        </h2>
+
+        <div class="clymph-service-card">
+          <div class="clymph-service-title">
+            Manual Lymphatic Drainage (MLD)
+          </div>
+          <p>
+            A gentle, precise technique that helps move lymph fluid out of the
+            affected area.
+          </p>
+        </div>
+
+        <div class="clymph-service-card">
+          <div class="clymph-service-title">
+            Compression Garments & Bandaging
+          </div>
+          <p>
+            Custom-fitted compression solutions to control swelling and prevent
+            progression.
+          </p>
+        </div>
+
+        <div class="clymph-service-card">
+          <div class="clymph-service-title">Scar Management & Skin Care</div>
+          <p>
+            Supporting healing and protecting fragile, post-radiation or
+            post-surgical skin.
+          </p>
+        </div>
+
+        <div class="clymph-service-card">
+          <div class="clymph-service-title">
+            Personalized Education & Exercises
+          </div>
+          <p>
+            Learn how to protect your lymphatic system and safely stay active.
+          </p>
+        </div>
+
+        <div class="clymph-service-card">
+          <div class="clymph-service-title">Emotional Support</div>
+          <p>
+            We understand how emotional and overwhelming cancer recovery can be.
+            We're here to support the whole person, not just the symptoms.
+          </p>
+        </div>
+
+        <div class="clymph-compassion-box">
+          <p>
+            We recognize that cancer-related lymphedema carries unique emotional
+            challenges. Our approach combines clinical expertise with genuine
+            compassion for what you've been through.
+          </p>
+        </div>
+
+        <div class="clymph-closing-section">
+          <h2 class="clymph-subheading">
+            Your Healing Isn't Over—And We're Here for This Part, Too
+          </h2>
+          <p>
+            Cancer may be behind you, but the effects of treatment can linger.
+            We help you move forward with confidence by addressing swelling
+            early, managing symptoms effectively, and helping you feel more like
+            yourself again.
+          </p>
+          <p>
+            You don't have to manage lymphedema alone. Let's work together
+            toward comfort, mobility, and empowerment.
+          </p>
+        </div>
+
+        <div class="clymph-section">
+          <div class="clymph-container">
+            <h2 class="clymph-subheading">
+              Ready for Post-Cancer Lymphedema Support?
+            </h2>
+            <p>
+              Contact us today or sign up for more information about our
+              specialized cancer-recovery lymphedema program.
+            </p>
+            <div class="clymph-input-group">
+              <input
+                type="email"
+                class="clymph-email-input"
+                placeholder="Your email address"
+              />
+              <button class="clymph-button clymph-primary-btn">
+                Get Information
+              </button>
+            </div>
+            <p class="clymph-privacy-note">
+              We respect your privacy. Your information will never be shared.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="footer light-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">Lymphfit Centre</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Opening soon in Ellicott City, MD</p>
+              <p></p>
+              <p class="mt-3">
+                <strong>Phone:</strong> <span>+1(443)-977-1232</span>
+              </p>
+              <p>
+                <strong>Email:</strong> <span>Lymphfitcenter@gmail.com </span>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <!-- <li><a href="#">About us</a></li> -->
+              <li><a href="#">Services</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li>
+                <a href="lymphedema-treatment.html">Lymphedema Treatment</a>
+              </li>
+              <li>
+                <a href="post-surgical-care.html">Post-Surgical Care</a>
+              </li>
+              <li>
+                <a href="lipedema-management.html">Lipedema Management</a>
+              </li>
+              <li>
+                <a href="compression-therapy.html">Compression Therapy</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Hic solutasetp</h4>
+            <ul>
+              <li><a href="#">Molestiae accusamus iure</a></li>
+              <li><a href="#">Excepturi dignissimos</a></li>
+              <li><a href="#">Suscipit distinctio</a></li>
+              <li><a href="#">Dilecta</a></li>
+              <li><a href="#">Sit quas consectetur</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Nobis illum</h4>
+            <ul>
+              <li><a href="#">Ipsam</a></li>
+              <li><a href="#">Laudantium dolorum</a></li>
+              <li><a href="#">Dinera</a></li>
+              <li><a href="#">Trodelas</a></li>
+              <li><a href="#">Flexo</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">LymphFit Centre</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          Designed by <a href="https://www.gptsoftwares.in/">GPT Software</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+      <a
+        href="https://wa.me/1234567890"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="bi bi-whatsapp" style="color: #e8e1e1"></i>
+      </a>
+    </div>
+    <!-- whatsapp  end-->
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <!-- <div id="preloader"></div> -->
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

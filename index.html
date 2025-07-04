@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LymphFit Center</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/1.png" rel="icon" />
+    <link href="assets/img//about.jpg" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <style>
+      /* Form Styles */
+      /* Form Styles */
+      .appointment .form-control {
+        padding: 10px 15px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        transition: all 0.3s;
+      }
+
+      .appointment .form-control:focus {
+        border-color: #1977cc;
+        box-shadow: 0 0 0 2px rgba(25, 119, 204, 0.2);
+      }
+
+      .appointment-btn {
+        background: #1977cc;
+        border: 0;
+        padding: 12px 30px;
+        color: #fff;
+        transition: all 0.4s;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .appointment-btn:hover {
+        background: #1c84e3;
+      }
+
+      .appointment-btn:disabled {
+        background: #a0c5e8;
+        cursor: not-allowed;
+      }
+
+      /* Loading State */
+      .loading {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        color: #1977cc;
+      }
+
+      .loading .spinner {
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(25, 119, 204, 0.3);
+        border-radius: 50%;
+        border-top-color: #1977cc;
+        animation: spin 1s ease-in-out infinite;
+        margin-right: 10px;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Messages */
+      .error-message,
+      .success-message {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+      }
+
+      .error-message.show,
+      .success-message.show {
+        display: flex;
+        opacity: 1;
+      }
+
+      .error-message {
+        align-items: center;
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+
+      .success-message {
+        align-items: center;
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .success-message .success-icon {
+        background: #28a745;
+        color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      /* Validation Styles */
+      .invalid-feedback {
+        display: none;
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: 0.875em;
+        color: #dc3545;
+      }
+
+      .is-invalid {
+        border-color: #dc3545 !important;
+        padding-right: calc(1.5em + 0.75rem);
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right calc(0.375em + 0.1875rem) center;
+        background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+      }
+
+      .is-invalid ~ .invalid-feedback {
+        display: block;
+      }
+      .appointment-btn {
+        background-color: #0c3b64;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .appointment-btn:hover {
+        background-color: #134e82;
+      }
+      .lf-section {
+        padding: 60px 20px;
+        background-color: #f0f4f8;
+        text-align: center;
+        margin-top: 40px;
+        border-radius: 12px;
+      }
+
+      .lf-container {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .lf-title {
+        font-size: 2.5rem;
+        color: #2a2a2a;
+        margin-bottom: 20px;
+      }
+
+      .lf-highlight {
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      .lf-input-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .lf-email-input {
+        width: 70%;
+        max-width: 400px;
+        padding: 14px;
+        border: 1px solid #bbb;
+        border-radius: 8px;
+        font-size: 1rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .lf-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .lf-primary-btn {
+        background-color: #00796b;
+        color: white;
+        border: none;
+      }
+
+      .lf-primary-btn:hover {
+        background-color: #005f56;
+      }
+
+      .lf-secondary-btn {
+        background-color: #444;
+        color: #fff;
+        border: none;
+      }
+
+      .lf-secondary-btn:hover {
+        background-color: #222;
+      }
+
+      .lf-btn-group {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .lf-privacy-note {
+        font-size: 1rem;
+        color: #555;
+        margin-top: 16px;
+      }
+
+      .lf-contact-email a {
+        color: #00796b;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .lf-banner-text {
+        width: 100%;
+        text-align: center;
+        padding: 30px 20px;
+        background-color: #eeffe9;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .lf-banner-text p {
+        font-size: 1.5rem;
+        color: #222;
+        margin: 0;
+        font-weight: 500;
+      }
+
+      .lf-highlight {
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      .service-detail-section {
+        padding: 80px 0;
+      }
+      .service-image {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+      .service-content h2 {
+        color: #00796b;
+        margin-bottom: 20px;
+      }
+      .benefits-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      .benefits-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+      }
+      .benefits-list i {
+        color: #00796b;
+        margin-right: 10px;
+        font-size: 1.2rem;
+      }
+      .treatment-process {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 30px;
+      }
+      .info-card {
+        background: white;
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      .info-card h3 {
+        color: #00796b;
+        border-bottom: 2px solid #00796b;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      .symptom-item,
+      .cause-item {
+        margin-bottom: 10px;
+        padding-left: 25px;
+        position: relative;
+      }
+      .symptom-item:before,
+      .cause-item:before {
+        content: "•";
+        color: #00796b;
+        font-weight: bold;
+        position: absolute;
+        left: 10px;
+      }
+      .treatment-item {
+        margin-bottom: 15px;
+      }
+      .treatment-item strong {
+        color: #00796b;
+      }
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      /* /****** */
+
+      .image-hover-wrapper {
+        overflow: hidden;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .image-hover-wrapper:hover {
+        transform: scale(1.02);
+      }
+
+      .img-fluid {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        min-height: 300px;
+      }
+
+      .rounded-lg {
+        border-radius: 1rem !important;
+      }
+
+      .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+      }
+
+      @media (max-width: 768px) {
+        .image-hover-wrapper {
+          margin: 0 -15px;
+          border-radius: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="index-page">
+    <header class="main-header">
+      <div class="header-container">
+        <a href="index.html" class="site-logo">
+          <img src="assets/img/1.png" alt="Lymphfit Centre Logo" />
+        </a>
+
+        <nav class="primary-nav" id="primaryNavigation">
+          <ul class="responsive">
+            <li><a href="index.html" class="current-page">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <!-- <li><a href="#departments">Departments</a></li> -->
+            <li><a href="resourses.html">Resources</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+          <a
+            class="nav-button"
+            href="https://scheduling.go.promptemr.com/onlineScheduling?w=2074&s=DL"
+            >Request an appointment</a
+          >
+          <a class="nav-button" href="tel: +1 443 241 9595"
+            ><i class="bi bi-telephone-fill"></i> &nbsp; Call Now</a
+          >
+        </nav>
+
+        <div class="menu-toggle" id="mobileMenuToggle">
+          <i class="bi bi-list"></i>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section light-background">
+        <img src="assets/img/imggg bg.jpg" alt="" data-aos="fade-in" />
+
+        <div class="container position-relative">
+          <div
+            class="welcome position-relative"
+            data-aos="fade-down"
+            data-aos-delay="100"
+          >
+            <h2>Welcome To LymphFit Center</h2>
+            <br />
+            <h3>Improving Movement. Advancing Recovery.</h3>
+            <br />
+            <h3>8820 Columbia 100 Parkway Suite 215 Columbia MD 21045</h3>
+
+            <!-- <p>Specialized Care for Lymphedema & Lymphatic Health -->
+            <!-- Providing expert therapy for swelling, mobility, <br> and recovery — led by a certified lymphedema therapist -->
+            <!-- and clinical educator. </p> -->
+            <h6>
+              <i style="font-weight: 400">
+                <b>Coming Soon</b> <br />We're getting ready to welcome
+                patients! Want to be notified when we open appointments, <br />
+                or have questions? Reach out!
+              </i>
+            </h6>
+          </div>
+          <!-- End Welcome -->
+
+          <div class="content row gy-4">
+            <div class="col-lg-4 d-flex align-items-stretch">
+              <div
+                class="why-box"
+                data-aos="zoom-out"
+                data-aos-delay="200"
+                style="height: 500px"
+              >
+                <h3>Why Choose LymphFit Center</h3>
+                <ul>
+                  <li>Certified Lymphedema Therapist (CLT)</li>
+                  <li>
+                    Trainer and mentor for fellow healthcare professionals
+                  </li>
+                  <li>One-on-one, hands-on care in a supportive setting</li>
+                  <li>Focus on long-term results and functional recovery</li>
+                  <li>Calm, professional environment</li>
+                </ul>
+
+                <div class="text-center">
+                  <a href="#about" class="more-btn"
+                    ><span>Learn More</span> <i class="bi bi-chevron-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!-- End Why Box -->
+
+            <div class="col-lg-8 d-flex align-items-stretch">
+              <div class="d-flex flex-column justify-content-center">
+                <div class="row gy-4">
+                  <div class="col-xl-4 d-flex align-items-stretch">
+                    <div
+                      class="icon-box"
+                      data-aos="zoom-out"
+                      data-aos-delay="300"
+                      style="height: 380px"
+                    >
+                      <i class="bi bi-clipboard-data"></i>
+                      <h4>Improving Movement.</h4>
+                      <!-- <p>
+                        Consequuntur sunt aut quasi enim aliquam quae harum
+                        pariatur laboris nisi ut aliquip
+                      </p> -->
+                    </div>
+                  </div>
+                  <!-- End Icon Box -->
+
+                  <div class="col-xl-4 d-flex align-items-stretch">
+                    <div
+                      class="icon-box"
+                      data-aos="zoom-out"
+                      data-aos-delay="400"
+                      style="height: 380px"
+                    >
+                      <i class="bi bi-gem"></i>
+                      <h4>Specialized Care for Lymphedema</h4>
+                      <!-- <p>
+                        Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt
+                      </p> -->
+                    </div>
+                  </div>
+                  <!-- End Icon Box -->
+
+                  <div class="col-xl-4 d-flex align-items-stretch">
+                    <div
+                      class="icon-box"
+                      data-aos="zoom-out"
+                      data-aos-delay="500"
+                      style="height: 380px"
+                    >
+                      <i class="bi bi-inboxes"></i>
+                      <h4>Lymphatic Health</h4>
+                      <!-- <p>
+                        Aut suscipit aut cum nemo deleniti aut omnis. Doloribus
+                        ut maiores omnis facere
+                      </p> -->
+                    </div>
+                  </div>
+                  <!-- End Icon Box -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End  Content-->
+        </div>
+      </section>
+      <!-- /Hero Section -->
+
+      <!-- Services Section -->
+      <section id="services" class="services section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Services</h2>
+          <p>We specialize in the treatment of:</p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <div class="row gy-4 justify-content-center">
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="fas fa-dna"></i>
+                </div>
+                <a
+                  href="Lymphedema upper and lower extremity.html"
+                  class="stretched-link"
+                >
+                  <h3 style="font-size: large">
+                    Lymphedema (upper and lower extremity)
+                  </h3>
+                </a>
+                <!-- <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis
+                tempore et consequatur.</p> -->
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="fas fa-dna"></i>
+                </div>
+                <a href="post_sergical.html" class="stretched-link">
+                  <h3 style="font-size: large">
+                    Post-surgical swelling and lymphatic support
+                  </h3>
+                </a>
+                <!-- <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut
+                nesciunt dolorem.</p> -->
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="fas fa-dna"></i>
+                </div>
+                <a href="Lipedema_Management.html" class="stretched-link">
+                  <h3 style="font-size: large">Lipedema management</h3>
+                </a>
+                <!-- <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci
+                eos earum corrupti.</p> -->
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="fas fa-dna"></i>
+                </div>
+                <a href="Phlebolymphedema.html" class="stretched-link">
+                  <h3 style="font-size: large">
+                    Chronic venous insufficiency-related swelling
+                  </h3>
+                </a>
+                <!-- <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident
+                adipisci neque.</p> -->
+                <a href="Phlebolymphedema.html" class="stretched-link"></a>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="fas fa-dna"></i>
+                </div>
+                <a
+                  href="Cancer-Related Lymphedema Radiation, Chemotherapy  Lymph Node Removal.html"
+                  class="stretched-link"
+                >
+                  <h3 style="font-size: large">
+                    Radiation or cancer-related lymphatic dysfunction
+                  </h3>
+                </a>
+                <!-- <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem
+                alias eius labore.</p> -->
+                <a
+                  href="Cancer-Related Lymphedema Radiation, Chemotherapy  Lymph Node Removal.html"
+                  class="stretched-link"
+                ></a>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="fas fa-dna"></i>
+                </div>
+                <a
+                  href="Self-Management_and_Long-Term_Care_for_Lymphedema.html"
+                  class="stretched-link"
+                >
+                  <h3 style="font-size: large">
+                    Education on self-management and long-term care
+                  </h3>
+                </a>
+                <!-- <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
+                recusandae ducimus enim.</p> -->
+                <a
+                  href="Self-Management_and_Long-Term_Care_for_Lymphedema.html"
+                  class="stretched-link"
+                ></a>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="fas fa-dna"></i>
+                </div>
+                <a href="compression.html" class="stretched-link">
+                  <h3 style="font-size: large">
+                    Compression garment education and fitting
+                  </h3>
+                </a>
+
+                <a href="compression.html" class="stretched-link"></a>
+              </div>
+            </div>
+            <!-- End Service Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Services Section -->
+
+      <div class="lf-banner-text">
+        <p>
+          Each treatment plan is customized
+          <span class="lf-highlight">to meet your unique</span> needs and goals.
+        </p>
+      </div>
+
+      <i class="mobile-nav-toggle d-xl-none bi bi-list d-none"></i>
+
+      <!-- Service Detail Content -->
+      <section id="service-detail" class="service-detail-section section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-right">
+              <img
+                src="assets/img/archive/lfc2.png"
+                alt="Lymphedema treatment"
+                class="img-fluid service-image"
+                style="max-width: 100%; height: 450px"
+              />
+            </div>
+            <div class="col-lg-6 service-content" data-aos="fade-left">
+              <h2>Lymphedema Treatment (Upper and Lower Extremity)</h2>
+              <p>
+                Our specialized lymphedema treatment program is designed to help
+                patients manage swelling, improve mobility, and enhance quality
+                of life through evidence-based techniques.
+              </p>
+
+              <div class="info-card">
+                <h3>What is Lymphedema?</h3>
+                <p>
+                  Lymphedema is a chronic condition that results from a buildup
+                  of lymphatic fluid in the tissues, leading to swelling, most
+                  commonly in the arms or legs. It occurs when the lymphatic
+                  system is damaged or blocked, and it can significantly impact
+                  comfort, mobility, and quality of life.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+              <div class="info-card">
+                <h3>Causes of Lymphedema</h3>
+                <p>
+                  <strong>Primary Lymphedema</strong><br />
+                  This type is rare and usually caused by inherited or
+                  congenital malformations of the lymphatic system. It may
+                  develop at birth or later in life during puberty or adulthood.
+                </p>
+
+                <p>
+                  <strong>Secondary Lymphedema</strong><br />
+                  This is more common and results from damage to the lymphatic
+                  system due to:
+                </p>
+                <div class="cause-item">
+                  Cancer treatment (such as surgery or radiation involving lymph
+                  nodes)
+                </div>
+                <div class="cause-item">Infection</div>
+                <div class="cause-item">Injury or trauma</div>
+                <div class="cause-item">Chronic venous insufficiency</div>
+                <div class="cause-item">Obesity</div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+              <div class="info-card">
+                <h3>Signs and Symptoms</h3>
+                <div class="symptom-item">
+                  Persistent swelling in the arm, leg, or other areas
+                </div>
+                <div class="symptom-item">
+                  A feeling of heaviness or tightness
+                </div>
+                <div class="symptom-item">Limited range of motion</div>
+                <div class="symptom-item">Aching or discomfort</div>
+                <div class="symptom-item">
+                  Hardening or thickening of the skin (fibrosis)
+                </div>
+                <div class="symptom-item">
+                  Recurring infections in the affected limb
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+              <div class="info-card">
+                <h3>Treatment Options</h3>
+                <div class="row align-items-center mb-4">
+                  <!-- Image Column -->
+                  <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="row g-4">
+                      <div
+                        class="col-12 col-sm-6"
+                        data-aos="fade-right"
+                        data-aos-delay="200"
+                      >
+                        <div class="image-hover-wrapper">
+                          <img
+                            src="assets/img/archive/lfc3.jpg"
+                            alt="Lymphatic drainage massage"
+                            class="img-fluid rounded-lg shadow-lg"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="col-12 col-sm-6"
+                        data-aos="fade-right"
+                        data-aos-delay="300"
+                      >
+                        <div class="image-hover-wrapper">
+                          <img
+                            src="assets/img/archive/lfc4.jpg"
+                            alt="Compression garment application"
+                            class="img-fluid rounded-lg shadow-lg"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Text Content -->
+                  <div
+                    class="col-md-6"
+                    data-aos="fade-left"
+                    data-aos-delay="300"
+                  >
+                    <p>
+                      While lymphedema cannot be cured, it can be effectively
+                      managed through a combination of therapeutic approaches
+                      tailored to each individual:
+                    </p>
+
+                    <!-- Rest of treatment items remain same -->
+                    <div class="treatment-item">
+                      <strong>Complete Decongestive Therapy (CDT)</strong><br />
+                      This gold-standard treatment includes:
+                      <ul>
+                        <li>
+                          Manual Lymphatic Drainage (MLD): A gentle, specialized
+                          massage that encourages the flow of lymph fluid.
+                        </li>
+                        <li>
+                          Compression Therapy: Use of bandages or garments to
+                          maintain reduced swelling and support fluid movement.
+                        </li>
+                        <li>
+                          Skin Care: To reduce risk of infection and maintain
+                          healthy tissue.
+                        </li>
+                        <li>
+                          Exercise: Safe movement routines that stimulate lymph
+                          flow.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Remaining treatment items -->
+                <div class="treatment-item">
+                  <strong>Compression Garments</strong><br />
+                  Custom or off-the-shelf compression sleeves or stockings are
+                  essential for long-term management.
+                </div>
+
+                <div class="treatment-item">
+                  <strong>Pneumatic Compression Devices</strong><br />
+                  At-home devices that apply intermittent pressure to help
+                  reduce swelling.
+                </div>
+
+                <div class="treatment-item">
+                  <strong>Education and Self-Management</strong><br />
+                  Empowering patients with knowledge on how to care for their
+                  condition daily is vital for long-term success.
+                </div>
+
+                <div class="alert alert-info mt-4">
+                  <strong>Why Early Intervention Matters</strong><br />
+                  Early diagnosis and treatment can prevent the condition from
+                  progressing, reduce complications, and improve quality of
+                  life. If you notice persistent swelling, consult a lymphedema
+                  therapist for an evaluation.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+              <div class="info-card">
+                <h3>Our Lymphedema Services</h3>
+                <p>
+                  At LymphFit Centre, we provide individualized, evidence-based
+                  care designed to manage and reduce lymphedema. Services
+                  include:
+                </p>
+                <ul>
+                  <li>
+                    One-on-one evaluations by a certified lymphedema therapist
+                  </li>
+                  <li>Personalized CDT programs</li>
+                  <li>
+                    Custom compression garment fitting and recommendations
+                  </li>
+                  <li>Long-term management planning</li>
+                  <li>
+                    Support for cancer-related and non-cancer-related lymphedema
+                  </li>
+                  <li>Education and home program training</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+              <div class="info-card">
+                <h3>Insurance & Referrals</h3>
+                <p>
+                  We accept most major insurance plans. A physician's referral
+                  may be required depending on your coverage. We're happy to
+                  help verify benefits and guide you through the referral
+                  process.
+                </p>
+                <div class="alert alert-warning">
+                  <strong
+                    >Not sure if your plan covers lymphedema therapy?</strong
+                  ><br />
+                  Contact us directly at <strong>+1(443)-977-1232</strong> or
+                  <strong>Lymphfitcenter@gmail.com</strong>—we're happy to help!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+              <div class="info-card">
+                <h3>Frequently Asked Questions</h3>
+
+                <div class="accordion" id="serviceFaq">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                      >
+                        How many treatment sessions will I need?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#serviceFaq"
+                    >
+                      <div class="accordion-body">
+                        The number of sessions varies based on your condition's
+                        severity. Most patients begin with 2-3 sessions per week
+                        for several weeks, then transition to maintenance.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                      >
+                        Is treatment painful?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#serviceFaq"
+                    >
+                      <div class="accordion-body">
+                        Manual Lymphatic Drainage is a gentle technique that
+                        should not cause pain. Some patients may experience mild
+                        discomfort when beginning compression therapy.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                      >
+                        Does insurance cover lymphedema treatment?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#serviceFaq"
+                    >
+                      <div class="accordion-body">
+                        Many insurance plans cover lymphedema treatment when
+                        medically necessary. Our team can help verify your
+                        benefits and explain coverage options.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour"
+                      >
+                        Is lymphedema curable?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFour"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#serviceFaq"
+                    >
+                      <div class="accordion-body">
+                        While lymphedema is not curable, it is very manageable.
+                        With proper care, many people lead active, healthy
+                        lives.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive"
+                      >
+                        How long is the treatment process?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFive"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#serviceFaq"
+                    >
+                      <div class="accordion-body">
+                        It varies. Intensive phases usually last 2–4 weeks,
+                        followed by a maintenance phase that includes home care,
+                        compression wear, and periodic follow-ups.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix"
+                      >
+                        Do you offer compression garment fitting?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseSix"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#serviceFaq"
+                    >
+                      <div class="accordion-body">
+                        Yes! We help patients choose the right garment and can
+                        assist with ordering custom pieces when needed.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Same Footer as Index Page -->
+
+      <!-- Scroll Top -->
+      <a
+        href="#"
+        id="scroll-top"
+        class="scroll-top d-flex align-items-center justify-content-center"
+        ><i class="bi bi-arrow-up-short"></i
+      ></a>
+
+      <!-- Main JS File -->
+      <script src="assets/js/main.js"></script>
+
+      <!--Join Our Waitlist end-->
+      <!-- <section id="appointment" class="appointment section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Appointment</h2>
+          <p>
+            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+            consectetur velit
+          </p>
+        </div>
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <form id="appointment-form">
+            <div class="row">
+              <div class="col-md-4 form-group">
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <input
+                  type="tel"
+                  class="form-control"
+                  name="phone"
+                  id="phone"
+                  placeholder="Your Phone"
+                  pattern="[0-9]{10}"
+                  maxlength="10"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Please enter a valid 10-digit phone number
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <textarea
+                class="form-control"
+                name="message"
+                rows="5"
+                placeholder="Message"
+              ></textarea>
+            </div>
+            <div class="mt-3">
+              <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <span>Sending your request...</span>
+              </div>
+              <div id="error-message" class="error-message"></div>
+              <div id="success-message" class="success-message">
+                <div class="success-icon">✓</div>
+                <span
+                  >Your appointment request has been sent successfully. Thank
+                  you!</span
+                >
+              </div>
+              <div class="text-center">
+                <button id="submit-btn" class="appointment-btn" type="submit">
+                  Request an Appointment
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section> -->
+      <!-- /Appointment Section -->
+
+      <!-- Waitlist Section -->
+      <section class="lf-section lf-waitlist-section">
+        <div class="lf-container lf-waitlist-container">
+          <h2 class="lf-title">Join Our Waitlist</h2>
+          <p>
+            Be the first to know when
+            <span class="lf-highlight">LymphFit Center</span> opens in Ellicott
+            City!
+          </p>
+          <p>
+            We're preparing to offer expert lymphedema care in a calm,
+            supportive space. Sign up to get updates on our launch, appointment
+            scheduling, and more.
+          </p>
+
+          <div class="lf-input-group">
+            <input
+              type="email"
+              class="lf-email-input"
+              placeholder="Enter your email"
+              id="lf-waitlist-email"
+              oninput="validateEmail()"
+            />
+            <button class="lf-button lf-primary-btn" onclick="joinWaitlist()">
+              Join Waitlist
+            </button>
+          </div>
+
+          <p class="lf-privacy-note">
+            🔒 We respect your privacy — no spam, ever.
+          </p>
+        </div>
+      </section>
+
+      <!-- Coming Soon Section -->
+      <!-- <section class="lf-section lf-coming-soon-section">
+        <div class="lf-container lf-coming-container">
+          <h2 class="lf-title" style="font-size: x-large">
+            Coming Soon to
+            <span class="lf-highlight" style="font-size: x-large"
+              >8820 Columbia 100 Parkway Suite 215 Columbia MD 21045</span
+            >
+          </h2>
+          <p>
+            We're getting ready to welcome patients! Want to be notified when we
+            open appointments, or have questions? Reach out!
+          </p>
+
+          <p class="lf-contact-email">
+            📧
+            <a href="mailto:lymphfitcenter@gmail.com"
+              >lymphfitcenter@gmail.com</a
+            >
+          </p>
+
+          <div class="lf-input-group">
+            <input
+              type="email"
+              class="lf-email-input"
+              placeholder="Enter your email"
+              id="lf-coming-email"
+            />
+            <div class="lf-btn-group">
+              <button class="lf-button lf-primary-btn" onclick="joinWaitlist()">
+                Join Waitlist
+              </button>
+              <button class="lf-button lf-secondary-btn" onclick="contactUs()">
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- end-->
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Contact</h2>
+          <!-- <p>
+            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+            consectetur velit
+          </p> -->
+        </div>
+        <!-- End Section Title -->
+
+        <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
+          <iframe
+            style="border: 0; width: 100%; height: 270px"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
+            frameborder="0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <!-- End Google Maps -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-4">
+              <div
+                class="info-item d-flex"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Location</h3>
+                  <p>8820 Columbia 100 Parkway Suite 215 Columbia MD 21045</p>
+                </div>
+              </div>
+              <!-- End Info Item -->
+
+              <div
+                class="info-item d-flex"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <a href="tel:  +1(443)-977-1232"> +1(443)-977-1232</a>
+                </div>
+              </div>
+              <!-- End Info Item -->
+
+              <div
+                class="info-item d-flex"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>
+                    <a href="mailto:lymphfitcenter@gmail.com"
+                      >Lymphfitcenter@gmail.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <!-- End Info Item -->
+            </div>
+
+            <div class="col-lg-8">
+              <form
+                action="forms/contact.php"
+                method="post"
+                class="php-email-form"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      placeholder="Your Name"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      placeholder="Your Email"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="subject"
+                      placeholder="Subject"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      rows="6"
+                      placeholder="Message"
+                      required=""
+                    ></textarea>
+                  </div>
+
+                  <div class="col-md-12 text-center">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">
+                      Your message has been sent. Thank you!
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- End Contact Form -->
+          </div>
+        </div>
+      </section>
+      <!-- /Contact Section -->
+      <!--Join Our Waitlist-->
+    </main>
+
+    <footer id="footer" class="footer light-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">Lymphfit Center</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>8820 Columbia 100 Parkway Suite 215 Columbia MD 21045</p>
+              <p></p>
+              <p class="mt-3">
+                <strong>Phone:</strong>
+                <span> <a href="tel: (443) 241-9595"> (443) 241-9595</a></span>
+              </p>
+              <p>
+                <strong>Email:</strong> <a href=""> </a>
+                <span>
+                  <a href="mailto:lymphfitcenter@gmail.com"
+                    >Lymphfitcenter@gmail.com</a
+                  >
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <!-- <li><a href="#">About us</a></li> -->
+              <li><a href="#">Services</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li>
+                <a href="lymphedema-treatment.html">Lymphedema Treatment</a>
+              </li>
+              <li>
+                <a href="post_sergical.html">Post-Surgical Care</a>
+              </li>
+              <li>
+                <a href="Lipedema_Management.html">Lipedema Management</a>
+              </li>
+              <li>
+                <a href="compression.html">Compression Therapy</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Hic solutasetp</h4>
+            <ul>
+              <li><a href="#">Molestiae accusamus iure</a></li>
+              <li><a href="#">Excepturi dignissimos</a></li>
+              <li><a href="#">Suscipit distinctio</a></li>
+              <li><a href="#">Dilecta</a></li>
+              <li><a href="#">Sit quas consectetur</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Nobis illum</h4>
+            <ul>
+              <li><a href="#">Ipsam</a></li>
+              <li><a href="#">Laudantium dolorum</a></li>
+              <li><a href="#">Dinera</a></li>
+              <li><a href="#">Trodelas</a></li>
+              <li><a href="#">Flexo</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">LymphFit Center</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          Designed by <a href="https://www.gptsoftwares.in/">GPT Software</a>
+        </div>
+      </div>
+    </footer>
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+      <a
+        href="https://wa.me/1234567890"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="bi bi-whatsapp" style="color: #e8e1e1"></i>
+      </a>
+    </div>
+    <!-- whatsapp  end-->
+
+    <!--  -->
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+      function joinWaitlist() {
+        let email = document.getElementById("email").value;
+        if (email) {
+          alert("Thank you for joining the waitlist! We will notify you soon.");
+        } else {
+          alert("Please enter a valid email address.");
+        }
+      }
+      function contactUs() {
+        window.location.href = "mailto:info@lymphfit.com";
+      }
+    </script>
+
+    <script>
+      function validateEmail() {
+        let email = document.getElementById("email");
+        let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (regex.test(email.value)) {
+          email.style.borderColor = "green";
+        } else {
+          email.style.borderColor = "red";
+        }
+      }
+      function joinWaitlist() {
+        let email = document.getElementById("email").value;
+        let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (regex.test(email)) {
+          alert("Thank you for joining the waitlist! We will notify you soon.");
+        } else {
+          alert("Please enter a valid email address.");
+        }
+      }
+    </script>
+    <!-- Include this near the end of your <body> tag -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize EmailJS
+        emailjs.init("OwgwI0x35nbklChz-");
+
+        const form = document.getElementById("appointment-form");
+        const phoneInput = document.getElementById("phone");
+        const submitBtn = document.getElementById("submit-btn");
+        const loading = document.getElementById("loading");
+        const errorMessage = document.getElementById("error-message");
+        const successMessage = document.getElementById("success-message");
+
+        // Phone number validation
+        phoneInput.addEventListener("input", function () {
+          // Remove any non-digit characters
+          this.value = this.value.replace(/\D/g, "");
+
+          // Validate length
+          if (this.value.length > 10) {
+            this.value = this.value.slice(0, 10);
+          }
+
+          // Toggle validation class
+          this.classList.toggle("is-invalid", this.value.length !== 10);
+        });
+
+        // Function to hide message after delay
+        function hideMessage(element) {
+          setTimeout(() => {
+            element.classList.remove("show");
+            setTimeout(() => (element.style.display = "none"), 300);
+          }, 2000);
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Validate phone number
+          if (phoneInput.value.length !== 10) {
+            phoneInput.classList.add("is-invalid");
+            phoneInput.focus();
+            return;
+          }
+
+          // Reset messages
+          errorMessage.classList.remove("show");
+          successMessage.classList.remove("show");
+          errorMessage.style.display = "none";
+          successMessage.style.display = "none";
+
+          // Show loading state
+          submitBtn.disabled = true;
+          loading.style.display = "flex";
+
+          const formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: phoneInput.value,
+            message: document.querySelector("textarea[name='message']").value,
+          };
+
+          emailjs
+            .send("service_jc9cyj4", "template_8rsd0kc", formData)
+            .then(function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+              successMessage.style.display = "flex";
+              setTimeout(() => successMessage.classList.add("show"), 10);
+              form.reset();
+              hideMessage(successMessage);
+            })
+            .catch(function (error) {
+              console.error("FAILED...", error);
+              errorMessage.textContent =
+                "Something went wrong. Please try again later.";
+              errorMessage.style.display = "flex";
+              setTimeout(() => errorMessage.classList.add("show"), 10);
+              hideMessage(errorMessage);
+            })
+            .finally(function () {
+              loading.style.display = "none";
+              submitBtn.disabled = false;
+            });
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("mobileMenuToggle");
+        const nav = document.getElementById("primaryNavigation");
+        const toggleIcon = toggle.querySelector("i");
+
+        // Toggle mobile menu
+        toggle.addEventListener("click", function () {
+          nav.classList.toggle("active");
+          toggleIcon.classList.toggle("bi-list");
+          toggleIcon.classList.toggle("bi-x");
+        });
+
+        // Close menu when clicking on links
+        document.querySelectorAll(".primary-nav a").forEach((link) => {
+          link.addEventListener("click", () => {
+            nav.classList.remove("active");
+            toggleIcon.classList.add("bi-list");
+            toggleIcon.classList.remove("bi-x");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
